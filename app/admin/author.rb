@@ -5,4 +5,9 @@ ActiveAdmin.register Author do
 			t.column("Title") { |book| book.name }
 		end
 	end
+
+	csv do
+		column :first_name
+		column :last_name
+	end
 end
