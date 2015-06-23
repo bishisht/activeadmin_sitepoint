@@ -1,5 +1,6 @@
 ActiveAdmin.register AdminUser do
   permit_params :email, :password, :password_confirmation
+  after_create { |admin| admin.send_reset_password_instructions }
 
   index do
     selectable_column
@@ -19,10 +20,14 @@ ActiveAdmin.register AdminUser do
   form do |f|
     f.inputs "Admin Details" do
       f.input :email
-      f.input :password
-      f.input :password_confirmation
+      # f.input :password
+      # f.input :password_confirmation
     end
     f.actions
+  end
+
+  def password_required?
+    new_record? ? false : super
   end
 
 end
