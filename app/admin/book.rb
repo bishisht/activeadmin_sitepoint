@@ -8,4 +8,9 @@ ActiveAdmin.register Book do
 		end
 		actions
 	end
+
+	filter :name
+	filter :author
+	filter :genre
+	filter :price
 end
