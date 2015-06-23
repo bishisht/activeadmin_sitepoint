@@ -10,4 +10,8 @@ ActiveAdmin.register Author do
 		column :first_name
 		column :last_name
 	end
+
+	# xlsx(:header_style => {:bg_color => 'C0BFBF', :fg_color => '000000' }) do
+ #  		delete_columns :id, :created_at, :updated_at
+	# end
 end
